@@ -1,4 +1,4 @@
-name: Private v0.7.0 Java 11 build verification
+name: Private v0.7.0 Java 11 build and offline verification
 
 on:
   push:
@@ -10,10 +10,10 @@ permissions:
   contents: read
 
 jobs:
-  java11-compile:
-    name: Compile RuneLite plugin (no gameplay)
+  java11-verify:
+    name: Build against RuneLite and run existing offline suites
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -26,5 +26,13 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.14.7'
-      - name: Compile plugin and test harness with actual dependencies
+      - name: Check release surface before compiling
+        run: python3 offline-tests/check-release-surface.py
+      - name: Run core offline checks (not gameplay)
+        run: bash offline-tests/run-tests.sh
+      - name: Run synthetic runtime checks (not native RuneLite)
+        run: bash offline-tests/run-runtime-behavior-tests.sh
+      - name: Run bounded-response checks
+        run: bash offline-tests/check-response-bounds.sh
+      - name: Clean compile against real RuneLite dependencies
         run: gradle --no-daemon --console=plain clean compileJava compileTestJava
