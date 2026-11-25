@@ -1,0 +1,1 @@
+package net.runelite.api.events;import net.runelite.api.GameState; public class GameStateChanged {GameState state;public GameStateChanged(GameState s){state=s;}public GameState getGameState(){return state;}}

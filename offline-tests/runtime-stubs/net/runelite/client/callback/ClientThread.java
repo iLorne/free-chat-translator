@@ -1,0 +1,1 @@
+package net.runelite.client.callback;import java.util.*;public class ClientThread {public final Queue<Runnable> queue=new ArrayDeque<>();public void invokeLater(Runnable r){queue.add(r);}public void flush(){int guard=0;while(!queue.isEmpty()){if(++guard>100)throw new AssertionError("loop");queue.remove().run();}}}

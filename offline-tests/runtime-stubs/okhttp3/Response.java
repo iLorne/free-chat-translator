@@ -1,0 +1,1 @@
+package okhttp3;public class Response implements AutoCloseable {int status;ResponseBody body;public Response(int n,ResponseBody b){status=n;body=b;}public boolean isSuccessful(){return status>=200&&status<300;}public int code(){return status;}public ResponseBody body(){return body;}public void close(){}}

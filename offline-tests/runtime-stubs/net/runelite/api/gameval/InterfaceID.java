@@ -1,0 +1,1 @@
+package net.runelite.api.gameval;public class InterfaceID {public static final int CHATBOX=100;public static class Chatbox { public static final int LINE0=100000;public static final int SCROLLAREA=100001;}}

@@ -1,0 +1,1 @@
+package net.runelite.api.events; import net.runelite.api.MenuEntry;public class MenuOpened {public MenuEntry[] entries;public MenuOpened(MenuEntry... x){entries=x;}public MenuEntry[] getMenuEntries(){return entries;}}

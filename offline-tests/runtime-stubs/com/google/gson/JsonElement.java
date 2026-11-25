@@ -1,0 +1,1 @@
+package com.google.gson;public class JsonElement {protected String value;public JsonElement(String s){value=s;}public boolean isJsonNull(){return value==null;}public boolean getAsBoolean(){return Boolean.parseBoolean(value);}public int getAsInt(){return Integer.parseInt(value);}public String getAsString(){return value;}}

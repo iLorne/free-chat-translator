@@ -1,0 +1,1 @@
+package okhttp3;public class Request {public String url;Request(String s){url=s;}public static class Builder {private String url;public Builder url(String s){url=s;return this;}public Builder get(){return this;}public Builder header(String k,String v){return this;}public Request build(){return new Request(url);}}}

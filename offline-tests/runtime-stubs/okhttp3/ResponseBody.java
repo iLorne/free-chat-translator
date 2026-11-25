@@ -1,0 +1,1 @@
+package okhttp3;import java.io.*;import java.nio.charset.StandardCharsets;public class ResponseBody {byte[] data;public ResponseBody(String s){data=s.getBytes(StandardCharsets.UTF_8);}public InputStream byteStream(){return new ByteArrayInputStream(data);}}

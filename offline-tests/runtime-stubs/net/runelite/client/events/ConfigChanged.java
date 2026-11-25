@@ -1,0 +1,1 @@
+package net.runelite.client.events;public class ConfigChanged {private String group,key,value;public ConfigChanged(String g,String k,String v){group=g;key=k;value=v;}public String getGroup(){return group;}public String getKey(){return key;}public String getNewValue(){return value;}}

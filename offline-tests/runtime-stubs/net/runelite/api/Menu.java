@@ -1,0 +1,1 @@
+package net.runelite.api; import java.util.*; public class Menu { public final List<MenuEntry> entries=new ArrayList<>(); public MenuEntry createMenuEntry(int i){ MenuEntry e=new MenuEntry();entries.add(e);return e;} public void clear(){entries.clear();}}

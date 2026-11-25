@@ -1,0 +1,1 @@
+package net.runelite.api.events;import net.runelite.api.ChatMessageType;public class ChatMessage {ChatMessageType type;String name,message;public ChatMessage(ChatMessageType t,String n,String m){type=t;name=n;message=m;}public ChatMessageType getType(){return type;}public String getName(){return name;}public String getMessage(){return message;}}
